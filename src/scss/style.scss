@@ -21,6 +21,7 @@ html {
     margin: 0 auto;
     position: fixed;
     background-color: white;
+    z-index: 100;
     &__logo{
        // background-image: url(../img/logo.svg);
         background-repeat: no-repeat;
@@ -49,6 +50,80 @@ html {
             color:$dark-blue;
         }
     }
+    &__burger-btn {
+        display: none;
+        width: 50px;
+        height: 50px;
+        border: none;
+        background-color: transparent;
+        position: relative;
+        cursor: pointer;
+        z-index: 110;
+        span {
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: black;
+            left: 5px;
+            transition: transform .5s, opacity .5s, background-color .5s;
+            &:nth-child(1) {
+                transform: translateY(-10px);
+            }
+            &:nth-child(3) {
+                transform: translateY(10px);
+            }
+        }
+    }
+ }
+ .header.open {
+    .header__burger-btn span {
+        &:nth-child(1) {
+            transform: translateY(0) rotate(-45deg);
+        }
+        &:nth-child(2) {
+            opacity: 0;
+        }
+        &:nth-child(3) {
+            transform: translateY(0) rotate(45deg);
+        }
+    }
+ }
+ @media (max-width: 1100px) {
+    .header__list {
+        display: block;
+    }
+    .header__link{
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+        color: $dark-gray;
+        display: block;
+        padding: 10px;
+        margin-left: -60px;
+        &:hover{
+            color:$dark-blue;
+            border-bottom: 1px solid $dark-blue;
+            width: 100px;
+        }
+    }
+    .header__burger-btn {
+        display: block;
+        //background-color: ;
+    }
+    .menu {
+        position: absolute;
+        width: 200px;
+        left: -260px;
+        top: 0;
+        background-color: $light-blue;
+        padding: 100px 20px 20px 20px;
+        border: 1px solid black;
+        transition: transform .5s;
+    }
+    .header.open .menu{
+        transform: translateX(100%);
+    }
+    
  }
  .container{
     width: 100%;
@@ -107,24 +182,30 @@ html {
     
     background-color: $light-blue;
     width: 100%;
-    justify-content: space-between;
+    
     display: flex;
     margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
 
     &__delivery{
 
         border: 1px solid black;
         display: inline-block;
         width: 33.33%;
+       
+        justify-content: space-between;
 
     }
-    &__support{
+    /*&__support{
         width: 33.33%;
         display: inline-block;
-    }
-    &__authentic{
+       
+    }*/
+    &__authentic, &__support{
         width: 33.33%;
         display: inline-block;
+        justify-content: space-between;
     }
     &__label{
         font-size: 24px;
@@ -178,12 +259,12 @@ html {
 }
 .space{
     width: 100%;
-    justify-content: space-between;
     margin: 0 auto;
-    align-items: center;
     background-color: $light-blue;
     height: 874px;
     display:block;
+    justify-content: space-between;
+    align-items: center;
     &__title{
         font-size: 32px;
         font-weight: bold;
@@ -196,6 +277,7 @@ html {
         display: inline-block;
         width: 514px;
         height: 280px;
+
 
     }
     &__foto{
@@ -214,9 +296,6 @@ html {
         height: 373px;
         width: 372px;
         
-       //margin-bottom: 200px;
-       
-       // left: -100px;
     }
     &__link{
         background-color: $dark-blue;
@@ -249,12 +328,30 @@ html {
         display: flex;
         align-items: center;
         font-size: 24px;
+        width: 1230px;
+        border: 1px solid black;
+        flex: none;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        ul {
+
+            display: flex;
+            list-style-type: none;
+            padding-inline-start: 0px;
+
+        }
+        .foto__list {
+
+        }
     }
   &__foto1{
-    padding: 40px 40px 40px 0px;
+    padding-left: 14.5px;
+    padding-right: 14.5px;
     display: inline-block;
   }
-  &__foto2{
+  /*&__foto2{
 
     padding: 0px 0px 0px 0px;
     display: inline-block;
@@ -262,7 +359,13 @@ html {
   &__foto3{
     padding: 40px 0px 40px 40px;
     display: inline-block;
-  }
+  }*/
+}
+.controls {
+    border: 1px solid black;
+    width: 500px;
+    height: 60px;
+    margin: 0 auto;
 }
 .work{
 

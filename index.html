@@ -8,12 +8,15 @@
     </head>
     <body>
         <header class="header">
+            <button class="header__burger-btn" id="burger">
+                <span></span><span></span><span></span>
+            </button>
                 <a href="#" class="header__logo">
                 <svg>
                     <use href="./src/img/image.svg#1">
                 </svg>   
                 </a> 
-                <nav>
+                <nav class="menu">
                     <ul class="header__list">
                         <li class="header__item">
                             <a href="#main" class="header__link">Главная</a>
@@ -49,10 +52,7 @@
                 <div class="service" id="service">
                     <div class="service__delivery">
                         <div class="service__image">
-                            <svg>
-                                <use href="./src/img/image.svg#2">
-                            
-                            </svg> 
+                            <img src="./src/img/icon_1.svg">
                             </div>
                         <div class="service__text">
                         <p class="service__label">Бесплатная доставка</p>
@@ -62,9 +62,7 @@
                     </div>
                     <div class="service__support">
                         <div class="service__image">
-                            <svg>
-                                <use href="./src/img/image.svg#3">
-                            </svg>
+                            <img src="./src/img/icon_2.svg">
                             </div> 
                         <div class="service__text">
                         <p class="service__label">Поддержка 24/7</p>
@@ -120,19 +118,50 @@
                        <p class="range__title">Просмотрите Ассортимент</p>
                        <p class="range__sign">В нашей новой коллекции Вы обязательно найдете то, что ищете</p>
                     </div>
-                    <div class="range__foto">
-                        <div class="range__foto1">
-                        <img src="src/img/Mask Group (4).svg"/>
-                        <p>Столовая</p>
+                    <div class="range__foto" id="range_foto">
+                    <ul>
+                        <li class="foto_list">
+                            <div class="range__foto1">
+                                <img src="src/img/Mask Group (4).svg"/>
+                                <p>Столовая</p>
+                            </div>
+                        </li>
+                        <li class="foto_list">
+                            <div class="range__foto1">
+                                <img src="src/img/Image-living room.svg"/>
+                                <p>Гостиная</p>
+                            </div> 
+                        </li>
+                        <li class="foto_list">
+                            <div class="range__foto1">
+                                <img  src="src/img/Mask Group (5).svg"/>
+                                <p>Спальня</p>
+                            </div>
+                        </li>
+                        
+                        <li class="foto_list">
+                            <div class="range__foto1">
+                                <img src="src/img/Mask Group (4).svg"/>
+                                <p>Столовая2</p>
+                            </div>
+                        </li>
+                        <li class="foto_list">
+                            <div class="range__foto1">
+                                <img src="src/img/Image-living room.svg"/>
+                                <p>Гостиная</p>
+                            </div> 
+                        </li>
+                        <li class="foto_list">
+                            <div class="range__foto1">
+                                <img  src="src/img/Mask Group (5).svg"/>
+                                <p>Спальня</p>
+                            </div>
+                        </li>
+                    </ul>
                     </div>
-                    <div class="range__foto2">
-                        <img src="src/img/Image-living room.svg"/>
-                        <p>Гостиная</p>
-                    </div>  
-                    <div class="range__foto3">
-                      <img  src="src/img/Mask Group (5).svg"/>
-                      <p>Спальня</p>
-                     </div>
+                    <div class="controls">
+                        <img src="./src/img/left.svg" alt="" id="leftBtn"></img>
+                        <img src="./src/img/right.svg" alt="" id="rightBtn"></img>
                     </div>
                 </div>
                 <div class="work" >
